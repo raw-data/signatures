@@ -12,7 +12,7 @@ rule PowerShellSuspiciousStrings
         modified = "2018-11-07"
 
         description = "PowerShellSuspiciousStrings"
-        /* origianlly from */
+        /* originally from */
         reference = "https://isc.sans.edu/forums/diary/Malicious+Powershell+Script+Dissection/24282/"
 
     strings:
