@@ -33,14 +33,14 @@ rule trojan_downloader_azorult
     $sss7 = "<protocol>" fullword ascii
     $sss8 = "<name>" fullword ascii
     $sss9 = "%APPDATA%\\.purple\\accounts.xml" fullword wide
-    $sss9 = "%TEMP%\\curbuf.dat" fullword wide
-    $sss10 = "%APPDATA%\\Skype" fullword wide
-    $sss11 = "SteamPath" fullword wide
-    $sss12 = "Software\\Valve\\Steam" fullword wide
+    $sss10 = "%TEMP%\\curbuf.dat" fullword wide
+    $sss11 = "%APPDATA%\\Skype" fullword wide
+    $sss12 = "SteamPath" fullword wide
+    $sss13 = "Software\\Valve\\Steam" fullword wide
 
     $hs1 = {6d 6f 7a 5f 68 69 73 74 6f 72 79 76 69 73 69 74 73 2e 76 69 73 69 74 5f 64 61 74 65}
     $hs2 = {6d 6f 7a 5f 68 69 73 74 6f 72 79 76 69 73 69 74 73}
-    $hs2 = {76 69 73 69 74 73 2e 76 69 73 69 74 5f 74 69 6d 65}
+    $hs3 = {76 69 73 69 74 73 2e 76 69 73 69 74 5f 74 69 6d 65}
 
  condition:
     (
