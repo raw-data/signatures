@@ -21,27 +21,24 @@ rule bitcoinminer_cryptonight
         $gs3 = "Pentium(R) Dual-Core"
         $gs4 = "Genuine Intel(R) CPU"
 
-        $ss1 = "cryptonight" fullword ascii
-        $ss2 = "cryptonight-light" fullword ascii
-        $ss3 = "cryptonight-lite" fullword ascii
-        $ss4 = "cryptonight-heavy" fullword ascii
+        $ss1 = "cryptonight-light" fullword ascii
+        $ss2 = "cryptonight-lite" fullword ascii
+        $ss3 = "cryptonight-heavy" fullword ascii
 
-        $hss = {5A 32 33 63 72 79 70 74 6F 6E 69 67 68 74}
-        $hss = {5A 32 31 63 72 79 70 74 6F 6E 69 67 68 74}
-        $hss = {5A 32 32 63 72 79 70 74 6F 6E 69 67 68 74}
+        $hss = {?? 63 72 79 70 74 6F 6E 69 67 68 74}
     
     condition:
         (
             ((uint16(0) == 0x457F) and (filesize > 4MB and filesize < 5MB))
                 and
             (
-                (2 of ($gs*) and ( (2 of ($ss*)) or (2 of ($hss*)) ) )
+                (2 of ($gs*) and ( (2 of ($ss*)) or $hss) )
             )
 
         )
         or
         (
-            (2 of ($gs*) and ( (2 of ($ss*)) or (2 of ($hss*)) ) )
+            (2 of ($gs*) and ( (2 of ($ss*)) or $hss) )
         )
 
 }
