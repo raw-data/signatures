@@ -1,5 +1,5 @@
 
-rule trojan_downloader_AscentorLoader
+rule win_trojan_downloader_ascentorloader
 {
 
   meta:

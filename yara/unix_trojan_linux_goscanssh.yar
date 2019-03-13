@@ -1,5 +1,5 @@
 
-rule trojan_linux_GoScanSSH
+rule unix_trojan_linux_goscanssh
 {
   meta:
     author = "raw-data"

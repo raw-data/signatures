@@ -1,5 +1,5 @@
 
-rule generic_jar_appended_to_msi
+rule memory_win_generic_jar_appended_to_msi
 {
   meta:
     author = "raw-data"

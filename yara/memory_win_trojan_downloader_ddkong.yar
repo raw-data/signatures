@@ -1,4 +1,4 @@
-rule trojan_downloader_DDKong
+rule memory_win_trojan_downloader_ddkong
 {
 
   meta:
@@ -8,7 +8,7 @@ rule trojan_downloader_DDKong
     type = "PE32 executable (DLL) (GUI) Intel 80386, for MS Windows"
     version = "1.0"
     created = "2018-06-26"
-    modified = "2018-06-26"
+    modified = "2019-03-13"
 
     description = "Trojan-Downloader.Win32.DDKong"
     reference = "https://researchcenter.paloaltonetworks.com/2018/06/unit42-rancor-targeted-attacks-south-east-asia-using-plaintee-ddkong-malware-families/"
@@ -39,14 +39,6 @@ rule trojan_downloader_DDKong
     $sh = {80 ?? ?? ?? 40 3B ?? ?? 72 ??}
 
   condition:
-    (
-        ((uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and filesize < 100KB)
-        and
-        (
-            (1 of ($gs*)) and (4 of ($ss*)) or ((2 of ($gh*)) and $sh )
-        )
-    )
-    or
     (
         (1 of ($gs*)) and (4 of ($ss*)) or ((2 of ($gh*)) and $sh )
     )

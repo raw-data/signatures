@@ -1,5 +1,5 @@
 
-rule create_service
+rule memory_win_generic_winos_create_service
 {
   meta:
     author = "raw-data"
@@ -7,9 +7,9 @@ rule create_service
 
     version = "1.0"
     created = "2018-11-05"
-    modified = "2018-11-05"
+    modified = "2019-03-13"
 
-    description = "create_service"
+    description = "Track Windows Service creation"
 
   strings:
 
@@ -24,16 +24,6 @@ rule create_service
     $ss9 = "SetServiceStatus" fullword ascii
 
   condition:
-    (
-      (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550)
-        and
-        (
-            (3 of ($ss*))
-        )
-
-    )
-    or
-
     (
         (3 of ($ss*))
     )

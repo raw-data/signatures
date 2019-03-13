@@ -1,4 +1,4 @@
-rule AutoItDropperLoader
+rule memory_win_generic_autoit_dropper_loader
 {
     meta:
         author = "raw-data"

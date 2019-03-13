@@ -1,6 +1,6 @@
 import "pe"
 
-rule trojan_net_dropper
+rule win_trojan_net_dropper
 {
 
  meta:

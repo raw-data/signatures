@@ -1,4 +1,4 @@
-rule trojan_downloader_amadey
+rule memory_win_trojan_downloader_amadey
 {
 
   meta:
@@ -7,7 +7,7 @@ rule trojan_downloader_amadey
 
     version = "1.0"
     created = "2018-11-12"
-    modified = "2018-11-12"
+    modified = "2019-03-13"
 
     description = "Trojan-downloader.Win32.Amadey"
 
@@ -42,14 +42,6 @@ rule trojan_downloader_amadey
     $ssn8 = "%s | %s | %s | %02d/%04d | %s" fullword ascii
 
  condition:
-    (
-        ((uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and filesize < 100KB)
-        and
-        (
-            (2 of ($ssf*) and  4 of ($sss*) and 2 of ($ssn*))
-        )
-    )
-    or
     (
         (2 of ($ssf*) and  4 of ($sss*) and 2 of ($ssn*))
     )

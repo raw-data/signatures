@@ -1,4 +1,4 @@
-rule trojan_downloader_azorult
+rule win_trojan_downloader_azorult
 {
 
   meta:

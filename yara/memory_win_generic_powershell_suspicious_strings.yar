@@ -1,4 +1,4 @@
-rule PowerShellSuspiciousStrings
+rule memory_win_generic_powershell_suspicious_strings
 {
     meta:
         /* originally by */

@@ -1,7 +1,7 @@
 import "math"
 import "pe"
 
-rule trojan_downloader_PLEAD
+rule win_trojan_downloader_plead
 {
 
   meta:

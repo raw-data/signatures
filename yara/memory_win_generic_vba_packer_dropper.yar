@@ -1,4 +1,4 @@
-rule generic_vba_packer_dropper
+rule memory_win_generic_vba_packer_dropper
 {
 
   meta:
@@ -35,14 +35,6 @@ rule generic_vba_packer_dropper
     $ss7 = {65 00 78 00 65}
 
  condition:
-    (
-        ((uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550))
-        and
-        (
-            (2 of ($gs*)) and (3 of ($gs_*)) and (2 of ($ss*))
-        )
-    )
-    or
     (
         (2 of ($gs*)) and (3 of ($gs_*)) and (2 of ($ss*))
     )

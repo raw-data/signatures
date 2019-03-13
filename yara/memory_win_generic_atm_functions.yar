@@ -1,5 +1,5 @@
 
-rule generic_atm_functions
+rule memory_win_generic_atm_functions
 {
 
   meta:
@@ -15,8 +15,8 @@ rule generic_atm_functions
   strings:
 
     $gs1 = "MSXFS.dll" fullword ascii
-    $gs2 = "DbdDevAPI.dll"
-    $gs3 = "ncr.aptra.axfs.activexfscontrols.dll"
+    $gs2 = "DbdDevAPI.dll" fullword ascii
+    $gs3 = "ncr.aptra.axfs.activexfscontrols.dll" fullword ascii
     $gs4 = "K3A.Platform.dll" fullword ascii
     $gs5 = "NCR.APTRA.AXFS" fullword ascii
     $gs6 = "IDCardUnit1" fullword ascii
@@ -48,17 +48,6 @@ rule generic_atm_functions
     $oxfs5 = "XFSVDM" fullword ascii
 
   condition:
-
-    (
-        ((uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550))
-        and
-        (
-            ((1 of ($msxfsf*)) and (1 of ($gs*)))
-                or
-            ((1 of ($oxfs*)) and (1 of ($gs*)))
-        )
-    )
-    or
     (
         ((1 of ($msxfsf*)) and (1 of ($gs*)))
             or

@@ -1,4 +1,4 @@
-rule bitcoinminer_cryptonight
+rule memory_unix_bitcoinminer_cryptonight
 {
     meta:
     author = "raw-data"
@@ -28,15 +28,6 @@ rule bitcoinminer_cryptonight
         $hss = {?? 63 72 79 70 74 6F 6E 69 67 68 74}
     
     condition:
-        (
-            ((uint16(0) == 0x457F) and (filesize > 4MB and filesize < 5MB))
-                and
-            (
-                (2 of ($gs*) and ( (2 of ($ss*)) or $hss) )
-            )
-
-        )
-        or
         (
             (2 of ($gs*) and ( (2 of ($ss*)) or $hss) )
         )
