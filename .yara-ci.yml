@@ -1,0 +1,4 @@
+files:
+  accept:
+  - "yara/**.yar"
+  - "yara/**.yara"
